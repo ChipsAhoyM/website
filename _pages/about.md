@@ -23,7 +23,7 @@ social: true  # includes social icons at the bottom of the page
   
 * Bachelor of Engineering at [Huazhong University of Science and Technology](http://english.hust.edu.cn/){:target="\_blank"}, Wuhan, China
 
-  Sept. 2015 ~ Jul. 2019, in School of Electronic Information and Communications
+  Sept. 2015 ~ Jul. 2019, in [School of Electronic Information and Communications](http://eic.hust.edu.cn/English/Home.htm){:target="\_blank"}
 
 <br>
 <br>
