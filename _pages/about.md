@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-description: PhD Candidate | Member of <a href="http://ci.idm.pku.edu.cn/">Camera Intelligence Lab</a> | Computational Photography
+description: PhD Candidate | Member of <a href="http://ci.idm.pku.edu.cn/" target="\_blank">Camera Intelligence Lab</a> | Computational Photography
 
 profile:
   align: right
