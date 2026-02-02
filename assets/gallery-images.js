@@ -1,0 +1,11 @@
+// Gallery images list - add your image filenames here
+// This file is automatically maintained, or you can edit it manually
+var galleryImages = [
+    { filename: 'Boya.JPG', title: 'Boya Tower', location: 'Boya Tower', description: 'The moon illuminates an iconic tower against the night sky' },
+    { filename: 'CZ5B.JPG', title: 'Changzheng-5B Launch', location: 'Wenchang', description: 'The first nighttime launch of China\'s Changzheng-5B rocket' },
+    { filename: 'Kobe.JPG', title: 'Kobe Harbor', location: 'Kobe', description: 'A tranquil harbor at dusk with boats silhouetted against the setting sun' },
+    { filename: 'StarBay.JPG', title: 'Xinghai Bay Bridge', location: 'Dalian', description: 'Xinghai Bay Bridge with a long exposure, surrounded by a smooth sea' },
+    { filename: 'XinSu.JPG', title: 'Shinjuku Streets', location: 'Shinjuku', description: 'Busy street scene at night in Shinjuku with illuminated signs and crowds' },
+    { filename: 'Wuhan.JPG', title: 'Yangtze River Sunset', location: 'Wuhan', description: 'People admire a stunning Yangtze River sunset sharing a moment together.' },
+];
+

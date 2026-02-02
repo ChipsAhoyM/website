@@ -9,51 +9,10 @@ nav: true
 
 <div class="gallery">
     <div class="gallery-description">
-        <p>Embark on a visual journey through stunning landscapes, vibrant cityscapes, and captivating moments captured between 2023-2024.</p>
+        <p>Embark on a visual journey through stunning landscapes and vibrant cityscapes.</p>
     </div>
-    <div class="photographs">
-        <div class="photograph">
-            <img src="/assets/gallery-thumb/Boya.JPG" alt="Photograph 1" data-full="/assets/gallery/Boya.JPG" class="gallery-image">
-            <div class="photograph-title">
-                <p><i class="fas fa-map-marker-alt"></i> Boya Tower</p>
-                <p>The moon illuminates an iconic tower against the night sky</p>
-            </div>
-        </div>
-        <div class="photograph">
-            <img src="/assets/gallery-thumb/CZ5B.png" alt="Photograph 2" data-full="/assets/gallery/CZ5B.JPG" class="gallery-image">
-            <div class="photograph-title">
-                <p><i class="fas fa-map-marker-alt"></i> Wenchang</p>
-                <p>The first nighttime launch of China’s Changzheng-5B rocket</p>
-            </div>
-        </div>
-        <div class="photograph">
-            <img src="/assets/gallery-thumb/Kobe.JPG" alt="Photograph 3" data-full="/assets/gallery/Kobe.JPG" class="gallery-image">
-            <div class="photograph-title">
-                <p><i class="fas fa-map-marker-alt"></i> Kobe</p>
-                <p>A tranquil harbor at dusk with boats silhouetted against the setting sun</p>
-            </div>
-        </div>
-        <div class="photograph">
-            <img src="/assets/gallery-thumb/StarBay.png" alt="Photograph 4" data-full="/assets/gallery/StarBay.JPG" class="gallery-image">
-            <div class="photograph-title">
-                <p><i class="fas fa-map-marker-alt"></i> Dalian</p>
-                <p>Xinghai Bay Bridge with a long exposure, surrounded by a smooth sea</p>
-            </div>
-        </div>
-        <div class="photograph">
-            <img src="/assets/gallery-thumb/XinSu.JPG" alt="Photograph 5" data-full="/assets/gallery/XinSu.JPG" class="gallery-image">
-            <div class="photograph-title">
-                <p><i class="fas fa-map-marker-alt"></i> Shinjuku</p>
-                <p>Busy street scene at night in Shinjuku with illuminated signs and crowds</p>
-            </div>
-        </div>
-        <div class="photograph">
-            <img src="/assets/gallery-thumb/Wuhan.JPG" alt="Photograph 6" data-full="/assets/gallery/Wuhan.JPG" class="gallery-image">
-            <div class="photograph-title">
-                <p><i class="fas fa-map-marker-alt"></i> Wuhan</p>
-                <p>People admire a stunning Yangtze River sunset sharing a moment together.</p>
-            </div>
-        </div>
+    <div class="photographs" id="photographs-container">
+        <div class="loading-message">Loading gallery...</div>
     </div>
 </div>
 
@@ -91,13 +50,34 @@ nav: true
         transform: scale(1.05);
     }
 
+    .image-wrapper {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        border-radius: 5px;
+        background: #f0f0f0;
+    }
+
     .photograph img {
         width: 100%;
-        height: auto;
-        border-radius: 5px;
+        height: 100%;
         object-fit: cover;
-        aspect-ratio: 1/1;
+        object-position: center;
         cursor: pointer;
+        transition: transform 0.3s ease;
+        display: block;
+    }
+    
+    .photograph:hover img {
+        transform: scale(1.05);
+    }
+
+    .loading-message {
+        text-align: center;
+        padding: 40px;
+        color: #888;
+        font-style: italic;
+        grid-column: 1 / -1;
     }
 
     .photograph-title {
@@ -134,22 +114,118 @@ nav: true
     }
 </style>
 
+<script src="/assets/gallery-images.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        var photographs = document.querySelectorAll('.photograph img');
         var fullscreenOverlay = document.getElementById('fullscreen-overlay');
         var fullscreenImage = document.getElementById('fullscreen-image');
+        var container = document.getElementById('photographs-container');
 
-        photographs.forEach(function(photograph) {
-            photograph.addEventListener('click', function() {
-                var imageSrc = this.getAttribute('data-full');
-                fullscreenImage.src = imageSrc;
-                fullscreenOverlay.style.display = 'block';
-            });
+        // Check if galleryImages is defined
+        if (typeof galleryImages === 'undefined' || !Array.isArray(galleryImages) || galleryImages.length === 0) {
+            container.innerHTML = '<div class="loading-message">No images found in gallery. Edit assets/gallery-images.js to add images.</div>';
+            return;
+        }
+
+        container.innerHTML = '';
+        
+        galleryImages.forEach(function(image) {
+            var photographDiv = document.createElement('div');
+            photographDiv.className = 'photograph';
+            
+            var imgWrapper = document.createElement('div');
+            imgWrapper.className = 'image-wrapper';
+            
+            var img = document.createElement('img');
+            var imagePath = '/assets/gallery/' + image.filename;
+            
+            // Get base name without extension
+            var baseName = image.filename.replace(/\.[^/.]+$/, '');
+            var originalExt = image.filename.split('.').pop();
+            
+            // Try multiple thumbnail paths (same filename, then common extensions)
+            var thumbPaths = [
+                '/assets/gallery-thumb/' + image.filename,  // Same filename
+                '/assets/gallery-thumb/' + baseName + '.jpg',
+                '/assets/gallery-thumb/' + baseName + '.JPG',
+                '/assets/gallery-thumb/' + baseName + '.png',
+                '/assets/gallery-thumb/' + baseName + '.PNG'
+            ];
+            
+            img.alt = image.title || 'Photograph';
+            img.className = 'gallery-image';
+            img.loading = 'lazy'; // Lazy loading for better performance
+            img.decoding = 'async'; // Async decoding for better performance
+            
+            // Store full image path for fullscreen view
+            img.setAttribute('data-full', imagePath);
+            
+            // Try thumbnails with different extensions, fallback to full image
+            var thumbIndex = 0;
+            img.onerror = function() {
+                thumbIndex++;
+                if (thumbIndex < thumbPaths.length) {
+                    // Try next thumbnail path
+                    this.src = thumbPaths[thumbIndex];
+                } else {
+                    // All thumbnails failed, use full image
+                    this.src = imagePath;
+                    this.onerror = null; // Prevent infinite loop
+                }
+            };
+            
+            // Start with first thumbnail path
+            img.src = thumbPaths[0];
+            
+            // Store full image path for fullscreen view
+            img.setAttribute('data-full', imagePath);
+            
+            imgWrapper.appendChild(img);
+            
+            var titleDiv = document.createElement('div');
+            titleDiv.className = 'photograph-title';
+            
+            if (image.location) {
+                var locationP = document.createElement('p');
+                locationP.innerHTML = '<i class="fas fa-map-marker-alt"></i> ' + image.location;
+                titleDiv.appendChild(locationP);
+            }
+            
+            if (image.description) {
+                var descP = document.createElement('p');
+                descP.textContent = image.description;
+                titleDiv.appendChild(descP);
+            } else if (image.title && !image.location) {
+                var titleP = document.createElement('p');
+                titleP.textContent = image.title;
+                titleDiv.appendChild(titleP);
+            }
+            
+            photographDiv.appendChild(imgWrapper);
+            photographDiv.appendChild(titleDiv);
+            container.appendChild(photographDiv);
         });
 
+        // Attach click handlers using event delegation for better performance
+        container.addEventListener('click', function(e) {
+            var img = e.target.closest('.gallery-image');
+            if (img) {
+                var imageSrc = img.getAttribute('data-full');
+                fullscreenImage.src = imageSrc;
+                fullscreenOverlay.style.display = 'block';
+            }
+        });
+
+        // Close fullscreen on overlay click
         fullscreenOverlay.addEventListener('click', function() {
             fullscreenOverlay.style.display = 'none';
+        });
+        
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && fullscreenOverlay.style.display === 'block') {
+                fullscreenOverlay.style.display = 'none';
+            }
         });
     });
 </script>
