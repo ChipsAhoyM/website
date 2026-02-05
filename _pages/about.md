@@ -24,7 +24,7 @@ I obtained my B.S. in Computer Science from the School of EECS and my B.H. in Hi
 
 ## Selected Publications
 <div class="publications">
-<p><sup>*</sup>   Equal Contribution   <sup><i class="fas fa-envelope mail-small"></i></sup>  Corresponding Author</p>
+<p><sup>*</sup> Equal Contribution</p>
 {% for y in page.publication_years %}
   <h2 class="year">{{y}}</h2>
   {% bibliography -f papers -q @*[year={{y}}, selected=true]* %}

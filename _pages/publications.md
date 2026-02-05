@@ -10,7 +10,6 @@ nav: true
 <div class="publications">
 <div class="pub-legend">
   <span class="legend-item"><sup>*</sup> Equal Contribution</span>
-  <span class="legend-item"><i class="fas fa-envelope mail-small"></i> Corresponding Author</span>
 </div>
 {% for y in page.years %}
   <h2 class="year">{{y}}</h2>
