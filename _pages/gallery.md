@@ -346,36 +346,12 @@ nav: true
             var img = document.createElement('img');
             var imagePath = baseUrl + '/assets/gallery/' + image.filename;
 
-            // Get base name without extension
-            var baseName = image.filename.replace(/\.[^/.]+$/, '');
-
-            // Try multiple thumbnail paths
-            var thumbPaths = [
-                baseUrl + '/assets/gallery-thumb/' + image.filename,
-                baseUrl + '/assets/gallery-thumb/' + baseName + '.jpg',
-                baseUrl + '/assets/gallery-thumb/' + baseName + '.JPG',
-                baseUrl + '/assets/gallery-thumb/' + baseName + '.png',
-                baseUrl + '/assets/gallery-thumb/' + baseName + '.PNG'
-            ];
-
             img.alt = image.title || 'Photograph';
             img.className = 'gallery-image';
             img.loading = 'lazy';
             img.decoding = 'async';
             img.setAttribute('data-index', index);
-
-            var thumbIndex = 0;
-            img.onerror = function() {
-                thumbIndex++;
-                if (thumbIndex < thumbPaths.length) {
-                    this.src = thumbPaths[thumbIndex];
-                } else {
-                    this.src = imagePath;
-                    this.onerror = null;
-                }
-            };
-
-            img.src = thumbPaths[0];
+            img.src = imagePath;
             imgWrapper.appendChild(img);
 
             var titleDiv = document.createElement('div');
