@@ -176,7 +176,7 @@ I obtained my B.S. in Computer Science from the School of EECS and my B.H. in Hi
     padding: 2px 8px;
     border-radius: 4px;
     flex-shrink: 0;
-    min-width: 75px;
+    width: 90px;
     text-align: center;
   }
 
