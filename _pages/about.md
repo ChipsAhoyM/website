@@ -72,7 +72,7 @@ I obtained my B.S. in Computer Science from the School of EECS and my B.H. in Hi
     <div class="service-card">
       <div class="card-header">
         <i class="fas fa-edit"></i>
-        <h3>Academic Review</h3>
+        <h3>Academia</h3>
       </div>
       <div class="card-content">
         <div class="service-item">
@@ -88,20 +88,20 @@ I obtained my B.S. in Computer Science from the School of EECS and my B.H. in Hi
     <div class="service-card">
       <div class="card-header">
         <i class="fas fa-chalkboard-teacher"></i>
-        <h3>Teaching & Mentoring</h3>
+        <h3>University</h3>
       </div>
       <div class="card-content">
         <div class="service-item">
           <span class="label">Mentor</span>
-          <span class="venues">Turing Class, EECS, PKU (2021-2025)</span>
+          <span class="venues">Turing Class, EECS, PKU<span class="time">2021-2025</span></span>
         </div>
         <div class="service-item">
           <span class="label">TA</span>
-          <span class="venues">Computational Photography (Spring 2022)</span>
+          <span class="venues">Computational Photography<span class="time">Spring 2022</span></span>
         </div>
         <div class="service-item">
           <span class="label">TA</span>
-          <span class="venues">Ideological & Moral Cultivation (Autumn 2022)</span>
+          <span class="venues">Ideological & Moral Cultivation<span class="time">Autumn 2022</span></span>
         </div>
       </div>
     </div>
@@ -184,6 +184,13 @@ I obtained my B.S. in Computer Science from the School of EECS and my B.H. in Hi
     font-size: 14px;
     color: var(--global-text-color, #555);
     line-height: 1.5;
+  }
+
+  .service-item .venues .time {
+    display: block;
+    font-size: 12px;
+    color: var(--global-text-color-light, #888);
+    margin-top: 2px;
   }
 
   @media screen and (max-width: 600px) {
