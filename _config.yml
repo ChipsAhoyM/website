@@ -14,7 +14,7 @@ footer_text:
   京ICP备2024071298号-1 | Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 
 icon: 🎓 # the emoji used as the favicon
-url: https://chipsahoym.github.io # the base hostname & protocol for your site
+url: https://tengminggui.cn # the base hostname & protocol for your site
 baseurl: "" # empty for root domain
 repository: ChipsAhoyM/chipsahoym.github.io # GitHub repository for jekyll-github-metadata
 last_updated: true # set to true if you want to display last updated in the footer
