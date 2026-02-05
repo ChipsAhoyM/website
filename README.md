@@ -19,13 +19,7 @@ bundle exec jekyll serve
 
 ## Gallery
 
-Add images to `assets/gallery/` and run:
-
-```bash
-python3 generate_thumbnails.py
-```
-
-Then update `assets/gallery-images.js` with image metadata.
+Add images to `assets/gallery/` and update `assets/gallery-images.js` with image metadata.
 
 ## License
 
