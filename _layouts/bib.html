@@ -5,7 +5,7 @@
   <div class="pub-card-inner">
     {% if entry.thumbnail %}
     <div class="pub-thumbnail">
-      <img src="{{ entry.thumbnail }}" alt="Thumbnail for {{ entry.title }}" loading="lazy">
+      <img src="{{ entry.thumbnail | relative_url }}" alt="Thumbnail for {{ entry.title }}" loading="lazy">
     </div>
     {% endif %}
 

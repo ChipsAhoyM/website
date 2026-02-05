@@ -280,8 +280,9 @@ nav: true
     }
 </style>
 
-<script src="/assets/gallery-images.js"></script>
+<script src="{{ '/assets/gallery-images.js' | relative_url }}"></script>
 <script>
+    var baseUrl = '{{ site.baseurl }}';
     document.addEventListener("DOMContentLoaded", function() {
         var fullscreenOverlay = document.getElementById('fullscreen-overlay');
         var fullscreenImage = document.getElementById('fullscreen-image');
@@ -307,7 +308,7 @@ nav: true
             currentIndex = index;
 
             var image = galleryImages[index];
-            var imagePath = '/assets/gallery/' + image.filename;
+            var imagePath = baseUrl + '/assets/gallery/' + image.filename;
             fullscreenImage.src = imagePath;
 
             var caption = '';
@@ -343,18 +344,18 @@ nav: true
             imgWrapper.className = 'image-wrapper';
 
             var img = document.createElement('img');
-            var imagePath = '/assets/gallery/' + image.filename;
+            var imagePath = baseUrl + '/assets/gallery/' + image.filename;
 
             // Get base name without extension
             var baseName = image.filename.replace(/\.[^/.]+$/, '');
 
             // Try multiple thumbnail paths
             var thumbPaths = [
-                '/assets/gallery-thumb/' + image.filename,
-                '/assets/gallery-thumb/' + baseName + '.jpg',
-                '/assets/gallery-thumb/' + baseName + '.JPG',
-                '/assets/gallery-thumb/' + baseName + '.png',
-                '/assets/gallery-thumb/' + baseName + '.PNG'
+                baseUrl + '/assets/gallery-thumb/' + image.filename,
+                baseUrl + '/assets/gallery-thumb/' + baseName + '.jpg',
+                baseUrl + '/assets/gallery-thumb/' + baseName + '.JPG',
+                baseUrl + '/assets/gallery-thumb/' + baseName + '.png',
+                baseUrl + '/assets/gallery-thumb/' + baseName + '.PNG'
             ];
 
             img.alt = image.title || 'Photograph';

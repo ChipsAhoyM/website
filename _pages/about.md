@@ -211,7 +211,7 @@ I obtained my B.S. in Computer Science from the School of EECS and my B.H. in Hi
   <ul>
     <li>
       <a href="https://camera.pku.edu.cn" target="_blank">
-        <img src="/assets/img/cameralab.png" alt="Camera Team Logo" class="logo">
+        <img src="{{ '/assets/img/cameralab.png' | relative_url }}" alt="Camera Team Logo" class="logo">
         <div class="text">
           <span class="time">Research Assistant</span>
           <span class="time">February 2019 - Present</span>
@@ -220,7 +220,7 @@ I obtained my B.S. in Computer Science from the School of EECS and my B.H. in Hi
     </li>
     <li>
       <a href="https://www.nii.ac.jp/en/" target="_blank">
-        <img src="/assets/img/NII.png" alt="NII Logo" class="logo">
+        <img src="{{ '/assets/img/NII.png' | relative_url }}" alt="NII Logo" class="logo">
         <div class="text">
           <span class="time">Visiting Student</span>
           <span class="time"> September 2025 - March 2026</span>
@@ -229,7 +229,7 @@ I obtained my B.S. in Computer Science from the School of EECS and my B.H. in Hi
     </li>
     <li>
       <a href="https://apple.com" target="_blank">
-        <img src="/assets/img/apple.png" alt="Apple Logo" class="logo">
+        <img src="{{ '/assets/img/apple.png' | relative_url }}" alt="Apple Logo" class="logo">
         <div class="text">
           <span class="time">ML Engineer Intern</span>
           <span class="time">February 2025 - August 2025</span>
