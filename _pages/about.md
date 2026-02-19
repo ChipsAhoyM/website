@@ -235,7 +235,7 @@ I obtained my B.S. in Computer Science from the School of EECS and my B.H. in Hi
     list-style: none;
     padding-left: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     margin-top: 15px;
   }
