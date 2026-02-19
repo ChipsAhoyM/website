@@ -6,6 +6,6 @@ var galleryImages = [
     { filename: 'Hawaii.jpg', title: 'Hawaii', location: 'Hawaii', date: '2025-10-18', description: 'Kilauea volcano erupts in a fiery display, with molten lava fountaining into the night sky' },
     { filename: 'CZ5B.JPG', title: 'Changzheng-5B Launch', location: 'Wenchang', date: '2024-12-16', description: 'The first nighttime launch of China\'s Changzheng-5B rocket' },
     { filename: 'StarBay.JPG', title: 'Xinghai Bay Bridge', location: 'Dalian', date: '2024-10', description: 'Xinghai Bay Bridge with a long exposure, surrounded by a smooth sea' },
-    { filename: 'Boya.JPG', title: 'Boya Tower', location: 'Boya Tower', date: '2023-08', description: 'The moon illuminates an iconic tower against the night sky' },
+    { filename: 'Boya.JPG', title: 'Boya Tower', location: 'Beijing', date: '2023-08', description: 'Boya Tower illuminated under the moonlight against the night sky' },
 ];
 
