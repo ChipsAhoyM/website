@@ -243,6 +243,15 @@ I obtained my B.S. in Computer Science from the School of EECS and my B.H. in Hi
         </div>
       </a>
     </li>
+    <li>
+      <a href="https://jp.shanda.com/" target="_blank">
+        <img src="{{ '/assets/img/shanda.png' | relative_url }}" alt="Shanda AI Research Tokyo Logo" class="logo">
+        <div class="text">
+          <span class="time">Research Intern</span>
+          <span class="time">September 2025 - March 2026</span>
+        </div>
+      </a>
+    </li>
   </ul>
 </div>
 
