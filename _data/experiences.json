@@ -3,6 +3,7 @@
     "name": "Camera Intelligence Lab, PKU",
     "url": "https://camera.pku.edu.cn",
     "logo": "cameralab.png",
+    "logo_light": "cameralab-light.png",
     "role": "Research Assistant",
     "period": "February 2019 - Present"
   },
@@ -10,6 +11,7 @@
     "name": "NII",
     "url": "https://www.nii.ac.jp/en/",
     "logo": "NII.png",
+    "logo_light": "NII-light.png",
     "role": "Visiting Student",
     "period": "September 2025 - March 2026"
   },
@@ -17,6 +19,7 @@
     "name": "Shanda AI Research Tokyo",
     "url": "https://jp.shanda.com/",
     "logo": "shanda.png",
+    "logo_light": "shanda-light.png",
     "role": "Research Intern",
     "period": "September 2025 - March 2026"
   },
@@ -24,6 +27,7 @@
     "name": "Apple",
     "url": "https://apple.com",
     "logo": "apple.png",
+    "logo_light": "apple-light.png",
     "role": "ML Engineer Intern",
     "period": "February 2025 - August 2025"
   }

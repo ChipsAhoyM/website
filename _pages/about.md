@@ -219,7 +219,10 @@ I obtained my B.S. in Computer Science from the School of EECS and my B.H. in Hi
     {% for exp in site.data.experiences %}
     <li>
       <a href="{{ exp.url }}" target="_blank">
-        <img src="{{ '/assets/img/logos/' | append: exp.logo | relative_url }}" alt="{{ exp.name }} Logo" class="logo">
+        <img src="{{ '/assets/img/logos/' | append: exp.logo | relative_url }}" alt="{{ exp.name }} Logo" class="logo logo-dark">
+        {% if exp.logo_light %}
+        <img src="{{ '/assets/img/logos/' | append: exp.logo_light | relative_url }}" alt="{{ exp.name }} Logo" class="logo logo-light">
+        {% endif %}
         <div class="text">
           <span class="time">{{ exp.role }}</span>
           <span class="time">{{ exp.period }}</span>
@@ -273,6 +276,14 @@ I obtained my B.S. in Computer Science from the School of EECS and my B.H. in Hi
     margin-bottom: 18px;
     transition: transform 0.3s ease;
   }
+
+  /* Light mode: show dark logo, hide light logo */
+  .experience .logo-light { display: none; }
+  .experience .logo-dark  { display: block; }
+
+  /* Dark mode: show light logo, hide dark logo */
+  html[data-theme='dark'] .experience .logo-light { display: block; }
+  html[data-theme='dark'] .experience .logo-dark  { display: none; }
 
   .experience li:hover .logo {
     transform: scale(1.05);
