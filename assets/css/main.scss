@@ -28,10 +28,13 @@ $max-content-width: {{site.max_width}};
 
 .icon-container {
   display: flex;
-  justify-content: center; /* Center the icons */
-  align-items: center; /* Vertically center the icons */
+  justify-content: center;
+  align-items: center;
   margin-top: 0;
   margin-bottom: 0;
+  a svg {
+    color: var(--global-text-color);
+  }
 }
 
 .btn-custom {
