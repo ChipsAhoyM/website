@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Camera Intelligence Lab, PKU",
+    "url": "https://camera.pku.edu.cn",
+    "logo": "cameralab.png",
+    "role": "Research Assistant",
+    "period": "February 2019 - Present"
+  },
+  {
+    "name": "NII",
+    "url": "https://www.nii.ac.jp/en/",
+    "logo": "NII.png",
+    "role": "Visiting Student",
+    "period": "September 2025 - March 2026"
+  },
+  {
+    "name": "Apple",
+    "url": "https://apple.com",
+    "logo": "apple.png",
+    "role": "ML Engineer Intern",
+    "period": "February 2025 - August 2025"
+  },
+  {
+    "name": "Shanda AI Research Tokyo",
+    "url": "https://jp.shanda.com/",
+    "logo": "shanda.png",
+    "role": "Research Intern",
+    "period": "September 2025 - March 2026"
+  }
+]
