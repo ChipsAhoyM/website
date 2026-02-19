@@ -19,7 +19,7 @@ let applyTheme = (theme) => {
 let setTheme = (theme) => {
   transTheme();
   applyTheme(theme);
-  localStorage.setItem("theme", theme);
+  localStorage.setItem("themeOverride", theme);
 
   // Updates the background of medium-zoom overlay.
   if (typeof medium_zoom !== 'undefined') {
@@ -40,19 +40,19 @@ let transTheme = () => {
 
 
 let initTheme = () => {
-  const stored = localStorage.getItem("theme");
-  if (stored) {
-    applyTheme(stored);
+  const override = localStorage.getItem("themeOverride");
+  if (override) {
+    applyTheme(override);
   } else {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     applyTheme(prefersDark ? 'dark' : 'light');
-
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (!localStorage.getItem("theme")) {
-        applyTheme(e.matches ? 'dark' : 'light');
-      }
-    });
   }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem("themeOverride")) {
+      applyTheme(e.matches ? 'dark' : 'light');
+    }
+  });
 }
 
 
