@@ -550,6 +550,8 @@ footer.sticky-bottom {
   padding: 0.7rem 0.9rem;
   margin-bottom: 0.5rem;
   transition: all 0.3s ease;
+  max-width: 100%;
+  overflow: hidden;
   &:hover {
     border-color: var(--global-theme-color);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -581,6 +583,9 @@ footer.sticky-bottom {
 .pub-content {
   flex: 1;
   min-width: 0;
+  overflow: hidden;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 @media (max-width: 600px) {
