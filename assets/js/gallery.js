@@ -1,5 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
     var baseUrl = window.galleryBaseUrl || '';
+
+    function formatDate(dateStr) {
+        if (!dateStr) return '';
+        var parts = dateStr.split('-');
+        var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        if (parts.length >= 2) {
+            return months[parseInt(parts[1], 10) - 1] + ' ' + parts[0];
+        }
+        return dateStr;
+    }
     var fullscreenOverlay = document.getElementById('fullscreen-overlay');
     var fullscreenImage = document.getElementById('fullscreen-image');
     var imageCaption = document.getElementById('image-caption');
@@ -27,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         var caption = '';
         if (image.location) caption += '<i class="fas fa-map-marker-alt"></i> ' + image.location;
+        if (image.date) caption += (caption ? ' &nbsp;·&nbsp; ' : '') + '<i class="far fa-calendar-alt"></i> ' + formatDate(image.date);
         if (image.description) caption += (caption ? ' — ' : '') + image.description;
         imageCaption.innerHTML = caption;
 
@@ -73,6 +84,13 @@ document.addEventListener("DOMContentLoaded", function() {
             var locationP = document.createElement('p');
             locationP.innerHTML = '<i class="fas fa-map-marker-alt"></i> ' + image.location;
             titleDiv.appendChild(locationP);
+        }
+
+        if (image.date) {
+            var dateP = document.createElement('p');
+            dateP.className = 'photograph-date';
+            dateP.innerHTML = '<i class="far fa-calendar-alt"></i> ' + formatDate(image.date);
+            titleDiv.appendChild(dateP);
         }
 
         if (image.description) {
