@@ -1,0 +1,21 @@
+<div class="services">
+  <hr class="divider">
+  <div class="services-grid">
+    {% for card in site.data.services %}
+    <div class="service-card">
+      <div class="card-header">
+        <i class="{{ card.icon }}"></i>
+        <h3>{{ card.title }}</h3>
+      </div>
+      <div class="card-content">
+        {% for item in card.items %}
+        <div class="service-item">
+          <span class="label">{{ item.label }}</span>
+          <span class="venues">{{ item.venues }}{% if item.time %}<span class="time">{{ item.time }}</span>{% endif %}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

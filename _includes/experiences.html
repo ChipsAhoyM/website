@@ -1,0 +1,19 @@
+<div class="experience">
+  <hr class="divider">
+  <ul>
+    {% for exp in site.data.experiences %}
+    <li>
+      <a href="{{ exp.url }}" target="_blank">
+        <img src="{{ '/assets/img/logos/' | append: exp.logo | relative_url }}" alt="{{ exp.name }} Logo" class="logo logo-dark">
+        {% if exp.logo_light %}
+        <img src="{{ '/assets/img/logos/' | append: exp.logo_light | relative_url }}" alt="{{ exp.name }} Logo" class="logo logo-light">
+        {% endif %}
+        <div class="text">
+          <span class="time">{{ exp.role }}</span>
+          <span class="time">{{ exp.period }}</span>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
