@@ -14,11 +14,7 @@ social: true  # includes social icons at the bottom of the page
 
 I am a final-year Ph.D. student in the School of Computer Science at Peking University, advised by Prof. Boxin Shi at the <a href="https://camera.pku.edu.cn" target="_blank">Camera Intelligence Lab</a>. My current research interests lie in Computational Photography and Generative AI, with a primary focus on neuromorphic cameras and video generation.
 
-My goal is to reimagine the future of camera systems by integrating neuromorphic cameras or advanced generative models, unlocking new possibilities in how we capture and create visual experiences. As an amateur photographer, I enjoy capturing the world through my lens. Explore <a href="/gallery/">gallery</a> to see images in the recent time.
-
-I obtained my B.S. in Computer Science from the School of EECS and my B.H. in History from the Department of History at Peking University in 2021. During my undergraduate studies, I concentrated on low-quality image enhancement guided by event cameras. In addition, I maintain a strong interest in contemporary world history, particularly the history of science and technology.
-<br>
-<br>
+I obtained my B.S. in Computer Science from the School of EECS and my B.H. in History from the Department of History at Peking University in 2021.
 <br>
 <br>
 
