@@ -61,133 +61,6 @@ I obtained my B.S. in Computer Science from the School of EECS and my B.H. in Hi
 
 <br>
 
-## Services
-<div class="services">
-  <hr class="divider">
-  <div class="services-grid">
-    {% for card in site.data.services %}
-    <div class="service-card">
-      <div class="card-header">
-        <i class="{{ card.icon }}"></i>
-        <h3>{{ card.title }}</h3>
-      </div>
-      <div class="card-content">
-        {% for item in card.items %}
-        <div class="service-item">
-          <span class="label">{{ item.label }}</span>
-          <span class="venues">{{ item.venues }}{% if item.time %}<span class="time">{{ item.time }}</span>{% endif %}</span>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</div>
-
-<style>
-  .services .divider {
-    border: none;
-    border-top: 1px solid rgba(128, 128, 128, 0.2);
-    margin-bottom: 20px;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-  }
-
-  .service-card {
-    background: var(--global-bg-color, #fff);
-    border: 1px solid rgba(128, 128, 128, 0.1);
-    border-radius: 12px;
-    padding: 20px 24px;
-    transition: all 0.3s ease;
-  }
-
-  .service-card:hover {
-    border-color: var(--global-theme-color, #007bff);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
-  }
-
-  .card-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
-  }
-
-  .card-header i {
-    color: var(--global-theme-color, #007bff);
-    font-size: 20px;
-  }
-
-  .card-header h3 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--global-text-color, #333);
-  }
-
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .service-item {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-  }
-
-  .service-item .label {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--global-theme-color, #007bff);
-    background: rgba(0, 123, 255, 0.08);
-    padding: 2px 8px;
-    border-radius: 4px;
-    flex-shrink: 0;
-    width: 90px;
-    text-align: center;
-  }
-
-  .service-item .venues {
-    font-size: 14px;
-    color: var(--global-text-color, #555);
-    line-height: 1.5;
-  }
-
-  .service-item .venues .time {
-    display: block;
-    font-size: 12px;
-    color: var(--global-text-color-light, #888);
-    margin-top: 2px;
-  }
-
-  @media screen and (max-width: 600px) {
-    .services-grid {
-      grid-template-columns: 1fr;
-    }
-    .service-card {
-      padding: 16px 18px;
-    }
-    .service-item {
-      flex-direction: column;
-      gap: 4px;
-    }
-    .service-item .label {
-      min-width: auto;
-    }
-  }
-</style>
-
-<br>
-
 ## Experiences
 <div class="experience">
   <hr class="divider">
@@ -322,6 +195,133 @@ I obtained my B.S. in Computer Science from the School of EECS and my B.H. in Hi
     }
     .experience .time {
       font-size: 12px;
+    }
+  }
+</style>
+
+<br>
+
+## Services
+<div class="services">
+  <hr class="divider">
+  <div class="services-grid">
+    {% for card in site.data.services %}
+    <div class="service-card">
+      <div class="card-header">
+        <i class="{{ card.icon }}"></i>
+        <h3>{{ card.title }}</h3>
+      </div>
+      <div class="card-content">
+        {% for item in card.items %}
+        <div class="service-item">
+          <span class="label">{{ item.label }}</span>
+          <span class="venues">{{ item.venues }}{% if item.time %}<span class="time">{{ item.time }}</span>{% endif %}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .services .divider {
+    border: none;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    margin-bottom: 20px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .service-card {
+    background: var(--global-bg-color, #fff);
+    border: 1px solid rgba(128, 128, 128, 0.1);
+    border-radius: 12px;
+    padding: 20px 24px;
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover {
+    border-color: var(--global-theme-color, #007bff);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+  }
+
+  .card-header i {
+    color: var(--global-theme-color, #007bff);
+    font-size: 20px;
+  }
+
+  .card-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--global-text-color, #333);
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .service-item {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .service-item .label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--global-theme-color, #007bff);
+    background: rgba(0, 123, 255, 0.08);
+    padding: 2px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    width: 90px;
+    text-align: center;
+  }
+
+  .service-item .venues {
+    font-size: 14px;
+    color: var(--global-text-color, #555);
+    line-height: 1.5;
+  }
+
+  .service-item .venues .time {
+    display: block;
+    font-size: 12px;
+    color: var(--global-text-color-light, #888);
+    margin-top: 2px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    .service-card {
+      padding: 16px 18px;
+    }
+    .service-item {
+      flex-direction: column;
+      gap: 4px;
+    }
+    .service-item .label {
+      min-width: auto;
     }
   }
 </style>
