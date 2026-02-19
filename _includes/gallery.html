@@ -1,0 +1,26 @@
+<div class="gallery">
+    <div class="gallery-header">
+        <p class="gallery-subtitle">Embark on a visual journey through stunning landscapes and vibrant cityscapes.</p>
+    </div>
+    <div class="photographs" id="photographs-container">
+        <div class="loading-message">
+            <div class="loading-spinner"></div>
+            <span>Loading gallery...</span>
+        </div>
+    </div>
+</div>
+
+<div id="fullscreen-overlay">
+    <button class="nav-btn nav-prev" id="nav-prev"><i class="fas fa-chevron-left"></i></button>
+    <button class="nav-btn nav-next" id="nav-next"><i class="fas fa-chevron-right"></i></button>
+    <button class="close-btn" id="close-btn"><i class="fas fa-times"></i></button>
+    <div class="fullscreen-content">
+        <img id="fullscreen-image" src="" alt="Full Image">
+        <div class="image-caption" id="image-caption"></div>
+    </div>
+    <div class="image-counter" id="image-counter"></div>
+</div>
+
+<script>window.galleryBaseUrl = '{{ site.baseurl }}';</script>
+<script src="{{ '/assets/gallery-images.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/gallery.js' | relative_url }}"></script>
