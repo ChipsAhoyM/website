@@ -8,22 +8,24 @@ let toggleTheme = (theme) => {
   }
 }
 
-
-let setTheme = (theme) =>  {
-  transTheme();
+let applyTheme = (theme) => {
   if (theme) {
     document.documentElement.setAttribute("data-theme", theme);
-  }
-  else {
+  } else {
     document.documentElement.removeAttribute("data-theme");
   }
+};
+
+let setTheme = (theme) => {
+  transTheme();
+  applyTheme(theme);
   localStorage.setItem("theme", theme);
-  
+
   // Updates the background of medium-zoom overlay.
   if (typeof medium_zoom !== 'undefined') {
     medium_zoom.update({
       background: getComputedStyle(document.documentElement)
-          .getPropertyValue('--global-bg-color') + 'ee',  // + 'ee' for trasparency.
+          .getPropertyValue('--global-bg-color') + 'ee',  // + 'ee' for transparency.
     })
   }
 };
@@ -37,15 +39,21 @@ let transTheme = () => {
 }
 
 
-let initTheme = (theme) => {
-  if (theme == null) {
-    const userPref = window.matchMedia;
-    if (userPref && userPref('(prefers-color-scheme: dark)').matches) {
-        theme = 'dark';
-    }
+let initTheme = () => {
+  const stored = localStorage.getItem("theme");
+  if (stored) {
+    applyTheme(stored);
+  } else {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem("theme")) {
+        applyTheme(e.matches ? 'dark' : 'light');
+      }
+    });
   }
-  setTheme(theme);
 }
 
 
-initTheme(localStorage.getItem("theme"));
+initTheme();
