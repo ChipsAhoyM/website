@@ -5,7 +5,7 @@ permalink: /
 
 profile:
   align: right
-  image: DDK.JPG
+  image: profile/DDK.JPG
 
 publication: true  # includes a list of papers
 publication_years: [2025, 2024, 2023, 2022]  # to show the papers in these years
@@ -219,7 +219,7 @@ I obtained my B.S. in Computer Science from the School of EECS and my B.H. in Hi
     {% for exp in site.data.experiences %}
     <li>
       <a href="{{ exp.url }}" target="_blank">
-        <img src="{{ '/assets/img/' | append: exp.logo | relative_url }}" alt="{{ exp.name }} Logo" class="logo">
+        <img src="{{ '/assets/img/logos/' | append: exp.logo | relative_url }}" alt="{{ exp.name }} Logo" class="logo">
         <div class="text">
           <span class="time">{{ exp.role }}</span>
           <span class="time">{{ exp.period }}</span>
