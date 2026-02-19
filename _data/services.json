@@ -1,0 +1,19 @@
+[
+  {
+    "title": "Academia",
+    "icon": "fas fa-edit",
+    "items": [
+      { "label": "Conferences", "venues": "CVPR, ICCV, ECCV, NeurIPS, ICML, AAAI, MM" },
+      { "label": "Journals", "venues": "TPAMI, TIP, TCSVT, TCI" }
+    ]
+  },
+  {
+    "title": "University",
+    "icon": "fas fa-chalkboard-teacher",
+    "items": [
+      { "label": "Mentor", "venues": "Turing Class, EECS, PKU", "time": "2021-2025" },
+      { "label": "TA", "venues": "Computational Photography", "time": "Spring 2022" },
+      { "label": "TA", "venues": "Ideological & Moral Cultivation", "time": "Autumn 2022" }
+    ]
+  }
+]

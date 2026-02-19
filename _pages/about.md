@@ -69,42 +69,22 @@ I obtained my B.S. in Computer Science from the School of EECS and my B.H. in Hi
 <div class="services">
   <hr class="divider">
   <div class="services-grid">
+    {% for card in site.data.services %}
     <div class="service-card">
       <div class="card-header">
-        <i class="fas fa-edit"></i>
-        <h3>Academia</h3>
+        <i class="{{ card.icon }}"></i>
+        <h3>{{ card.title }}</h3>
       </div>
       <div class="card-content">
+        {% for item in card.items %}
         <div class="service-item">
-          <span class="label">Conferences</span>
-          <span class="venues">CVPR, ICCV, ECCV, NeurIPS, ICML, AAAI, MM</span>
+          <span class="label">{{ item.label }}</span>
+          <span class="venues">{{ item.venues }}{% if item.time %}<span class="time">{{ item.time }}</span>{% endif %}</span>
         </div>
-        <div class="service-item">
-          <span class="label">Journals</span>
-          <span class="venues">TPAMI, TIP, TCSVT, TCI</span>
-        </div>
+        {% endfor %}
       </div>
     </div>
-    <div class="service-card">
-      <div class="card-header">
-        <i class="fas fa-chalkboard-teacher"></i>
-        <h3>University</h3>
-      </div>
-      <div class="card-content">
-        <div class="service-item">
-          <span class="label">Mentor</span>
-          <span class="venues">Turing Class, EECS, PKU<span class="time">2021-2025</span></span>
-        </div>
-        <div class="service-item">
-          <span class="label">TA</span>
-          <span class="venues">Computational Photography<span class="time">Spring 2022</span></span>
-        </div>
-        <div class="service-item">
-          <span class="label">TA</span>
-          <span class="venues">Ideological & Moral Cultivation<span class="time">Autumn 2022</span></span>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
 
